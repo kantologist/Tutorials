@@ -1,10 +1,10 @@
  <div class="home-page">
 
   <!-- Splash banner that only shows when not logged in -->
-  <div class="banner" show-authed="false">
+  <div class="banner">
     <div class="container">
-      <h1 class="logo-font" ng-bind="::$ctrl.appName | lowercase"></h1>
-      <p>A place to share your knowledge.</p>
+      <h1 class="logo-font"> Python Tutorial. </h1>
+      <p>Welcome to the world of  Python programming.</p>
     </div>
   </div>
 
@@ -14,67 +14,47 @@
 
       <!-- Main view - contains tabs & article list -->
       <div class="col-md-9">
-        <!-- Tabs for toggling between feed, article lists -->
-        <div class="feed-toggle">
-          <ul class="nav nav-pills outline-active">
-
-            <li class="nav-item" show-authed="true">
-              <a href="" class="nav-link active">
-                Your Feed
-              </a>
+          <ul class="list-group">
+            <li class="list-group-item"><a ui-sref="app.article1"><h3 >Python Basic</h3></a>
+              <p>Python Syntax, 
+                  Built-in Python Types</p>
             </li>
-
-            <li class="nav-item">
-              <a href="" class="nav-link">
-                Global Feed
-              </a>
+            <li class="list-group-item"><a ui-sref="app.article2"><h3 >Python Strings</h3></a>
+              <p>Strings and Console Output, Basic String Operations</p>
             </li>
-
+            <li class="list-group-item"><a ui-sref="app.article3"><h3 >Conditionals in Python</h3></a>
+              <p> Conditionals and Control Flow,If, else, elif flows, Booleans</p>
+            </li>
+            <li class="list-group-item"><a ui-sref="app.article4"><h3 >Functions</h3></a>
+              <p>Introduction to Functions</p>
+            </li>
+            <li class="list-group-item"><a ui-sref="app.article5"><h3 >Python Lists and Dictionaries</h3></a>
+              <p>Lists & Dictionaries, Differences Between Sets and Lists</p>
+            </li>
+            <li class="list-group-item"><a ui-sref="app.article6"><h3 >Loops</h3></a>
+              <p>While and For Loops</p>
+            </li>
+            <li class="list-group-item"><a ui-sref="app.article7"><h3>Advanced Topics in Python</h3></a>
+              <p>Python: Lambda Functions, iterators, generators, map, filter, reduce</p>
+            </li>
+            <li class="list-group-item"><a ui-sref="app.article8"><h3 >Introduction to Classes</h3></a>
+              <p>Modules, Classes and Objects</p>
+            </li>
+            <li class="list-group-item"><a ui-sref="app.article9"><h3 >File Input and Output</h3></a>
+              <p>Reading and write files in Python</p>
+            </li>
+            <li class="list-group-item"><a ui-sref="app.article10"><h3 >Webscraping</h3></a>
+              <p>Introduction Web scraping using request and BeautifulSoup. Also involving regular expression and xml processing.</p>
+            </li>
+            <li class="list-group-item"><a ui-sref="app.article11"><h3 >Data Science Tools with Python.</h3></a>
+              <p>Introduction to Numpy, Pandas, scipy and Sci-kit learn</p>
+            </li>
+            <li class="list-group-item"><a ui-sref="app.article12"><h3 >Basic Networking with Python.</h3></a>
+              <p> TCP/IP, Client/Server sides.</p>
+            </li>  
           </ul>
         </div>
 
-        <!-- List the current articles -->
-        <div class="article-preview">
-          <div class="article-meta">
-            <a href=""><img /></a>
-            <div class="info">
-              <a href="" class="author">BradGreen</a>
-              <span class="date">January 20th</span>
-            </div>
-            <button class="btn btn-outline-primary btn-sm pull-xs-right">
-              <i class="ion-heart"></i> 29
-            </button>
-          </div>
-          <a href="" class="preview-link">
-            <h1>How to build Angular apps that scale</h1>
-            <p>Building web applications is not an easy task. It's even hard to make ones that scale.</p>
-            <span>Read more...</span>
-            <ul class="tag-list">
-              <li class="tag-default tag-pill tag-outline">programming</li>
-              <li class="tag-default tag-pill tag-outline">web</li>
-            </ul>
-          </a>
-        </div>
-
-      </div>
-
-      <!-- Sidebar where popular tags are listed -->
-      <div class="col-md-3">
-        <div class="sidebar">
-
-          <p>Popular Tags</p>
-
-          <div class="tag-list">
-            <a href="" class="tag-default tag-pill">
-              Tag One
-            </a>
-            <a href="" class="tag-default tag-pill">
-              Tag Two
-            </a>
-          </div>
-
-        </div>
-      </div>
 
       <!-- End the row & container divs -->
     </div>

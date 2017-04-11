@@ -13,7 +13,18 @@ import './layout';
 import './components';
 import './home';
 import './profile';
-import './article';
+import './article1';
+import './article2';
+import './article3';
+import './article4';
+import './article5';
+import './article6';
+import './article7';
+import './article8';
+import './article9';
+import './article10';
+import './article11';
+import './article12';
 import './services';
 import './auth';
 
@@ -26,9 +37,20 @@ const requires = [
   'app.components',
   'app.home',
   'app.profile',
-  'app.article',
+  'app.article1',
+  'app.article2',
+    'app.article3',
+    'app.article4',
+    'app.article5',
+    'app.article6',
+    'app.article7',
+    'app.article8',
+    'app.article9',
+    'app.article10',
+    'app.article11',
+    'app.article12',
   'app.services',
-    'app.auth'
+  'app.auth'
 ];
 
 // Mount on window for testing

@@ -9,4 +9,7 @@ componentsModule.component('listErrors', ListErrors);
 import ShowAuthed from './show-authed.directive';
 componentsModule.directive('showAuthed', ShowAuthed);
 
+import Syllabus from './syllabus.components';
+componentsModule.component('syllabus', Syllabus);
+
 export default componentsModule;
