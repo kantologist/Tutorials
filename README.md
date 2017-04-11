@@ -1,4 +1,6 @@
-# Conduit AngularJS Starter
+# A Tutorial AngularJS App
+
+### This app uses the Conduit AngularJS Starter
 
 1. Clone repo
 2. `npm install`
