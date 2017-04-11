@@ -9,6 +9,7 @@ var rename        = require('gulp-rename');
 var templateCache = require('gulp-angular-templatecache');
 var uglify        = require('gulp-uglify');
 var merge         = require('merge-stream');
+var deploy        = require('gulp-gh-pages');
 
 // Where our files are located
 var jsFiles   = "src/js/**/*.js";
@@ -46,6 +47,7 @@ gulp.task('html', function() {
       .pipe(gulp.dest('./build/'));
 });
 
+
 gulp.task('views', function() {
   return gulp.src(viewFiles)
       .pipe(templateCache({
@@ -79,6 +81,11 @@ gulp.task('default', ['html', 'browserify'], function() {
       port: 4001
     }
   });
+    
+gulp.task('deploy', ['default'], function(){
+    return gulp.src("./build/**/*")
+    .pipe(deploy())
+});    
 
   gulp.watch("src/index.html", ['html']);
   gulp.watch(viewFiles, ['views']);
