@@ -71,6 +71,11 @@ gulp.task('build', ['html', 'browserify'], function() {
   return merge(html,js);
 });
 
+gulp.task('deploy', ['build'], function(){
+    return gulp.src("./build/**/*")
+    .pipe(deploy())
+}); 
+
 gulp.task('default', ['html', 'browserify'], function() {
 
   browserSync.init(['./build/**/**.**'], {
@@ -80,12 +85,7 @@ gulp.task('default', ['html', 'browserify'], function() {
     ui: {
       port: 4001
     }
-  });
-    
-gulp.task('deploy', ['default'], function(){
-    return gulp.src("./build/**/*")
-    .pipe(deploy())
-});    
+  });   
 
   gulp.watch("src/index.html", ['html']);
   gulp.watch(viewFiles, ['views']);

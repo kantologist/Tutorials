@@ -7,7 +7,12 @@ function ArticleConfig($stateProvider) {
     controller: 'ArticleCtrl',
     controllerAs: '$ctrl',
     templateUrl: 'article3/article.html',
-    title: 'Article'
+    title: 'Article',
+      resolve: {
+            auth: function(User){
+                return User.ensureAuthIs(true);
+            }
+        }
   });
 
 };
