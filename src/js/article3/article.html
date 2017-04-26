@@ -11774,20 +11774,173 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Conditionals:">Conditionals:<a class="anchor-link" href="#Conditionals:">&#182;</a></h1><p>..... coming soon</p>
+<h1 id="Conditionals:">Conditionals:<a class="anchor-link" href="#Conditionals:">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Decision making is very critical to any system. We want to be able to code logic. Instruct the computer on what to do given certain conditions or otherwise.</p>
+<p>The syntax for decisions in python is:</p>
+<p>if expression:
+    statement
+else:
+    another statement</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The flow chart is given below:</p>
+<p><img src="http://cess.nyu.edu/wp-content/uploads/2012/01/ifcond.jpg">
+<a href="http://cess.nyu.edu/cess-experiments/z-tree-cheat-sheet/ii-conditional-statements-and-loops/">source: http://cess.nyu.edu/cess-experiments/z-tree-cheat-sheet/ii-conditional-statements-and-loops/</a></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># example the if else statement in python</span>
+<span class="n">morning</span> <span class="o">=</span> <span class="s2">&quot;good&quot;</span>
+<span class="k">if</span> <span class="n">morning</span> <span class="o">==</span> <span class="s2">&quot;good&quot;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;Good Morning&quot;</span>  <span class="c1"># executes if condition is true</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;You had a nightmare?&quot;</span>  <span class="c1"># executes if condition is false</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Good Morning
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Chained-Conditionals">Chained Conditionals<a class="anchor-link" href="#Chained-Conditionals">&#182;</a></h2><p>There are situations where we need to capture more than one condition. The flow chart looks like this:
+<img src="http://openbookproject.net/thinkcs/python/english3e/_images/flowchart_chained_conditional.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># example</span>
+<span class="n">item</span> <span class="o">=</span> <span class="s2">&quot;infinite&quot;</span>
+<span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;flat&quot;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;it is a book&quot;</span> <span class="c1"># does this if item is flat</span>
+<span class="k">elif</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;spherical&quot;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;It is the earth&quot;</span> <span class="c1"># does this if item is spherical</span>
+<span class="k">elif</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;infinite&quot;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;It is the universe&quot;</span> <span class="c1"># does this if item is infinite</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="k">print</span> <span class="s2">&quot;I don&#39;t know what it is&quot;</span> <span class="c1"># does this if any of the above is not true</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>It is the universe
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Nested-Conditionals">Nested Conditionals<a class="anchor-link" href="#Nested-Conditionals">&#182;</a></h2><p>There are also situations where you need a another condition inside a condition.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="http://www.difranco.net/compsci/Python/Outlines/ch05cs5.gif"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># example</span>
+<span class="n">age</span> <span class="o">=</span>  <span class="mi">20</span>
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;I am Grown up&quot;</span> 
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">13</span><span class="p">:</span>    <span class="c1"># nested if block</span>
+        <span class="k">print</span> <span class="s2">&quot;I am a child&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s2">&quot;I am a youth&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>I am a youth
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
