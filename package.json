@@ -23,6 +23,7 @@
     "merge-stream": "^1.0.0"
   },
   "devDependencies": {
+    "gulp-clean-css": "^3.7.0",
     "gulp-gh-pages": "^0.5.4"
   }
 }

@@ -1,15 +1,10 @@
 class AppHeaderCtrl {
-  constructor(AppConstants, User) {
+  constructor(AppConstants) {
     'ngInject';
 
     this.appName = AppConstants.appName;
-    this._User = User;  
   }
- logout(){
-     this._User.logout();
  }   
-    
-}
 
 let AppHeader = {
   controller: AppHeaderCtrl,

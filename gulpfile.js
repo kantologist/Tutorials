@@ -10,6 +10,7 @@ var templateCache = require('gulp-angular-templatecache');
 var uglify        = require('gulp-uglify');
 var merge         = require('merge-stream');
 var deploy        = require('gulp-gh-pages');
+var cleanCSS      = require('gulp-clean-css');
 
 // Where our files are located
 var jsFiles   = "src/js/**/*.js";
@@ -41,6 +42,14 @@ gulp.task('browserify', ['views'], function() {
       .pipe(gulp.dest('./build/'));
 });
 
+gulp.task('minify-css', () => {
+  return gulp.src('./src/main.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .on('error', interceptErrors)
+      // Start piping stream to tasks!
+      .pipe(gulp.dest('./build/'));
+});
+
 gulp.task('html', function() {
   return gulp.src("src/index.html")
       .on('error', interceptErrors)
@@ -60,15 +69,18 @@ gulp.task('views', function() {
 
 // This task is used for building production ready
 // minified JS/CSS files into the dist/ folder
-gulp.task('build', ['html', 'browserify'], function() {
+gulp.task('build', ['html', 'browserify','minify-css'], function() {
   var html = gulp.src("build/index.html")
                  .pipe(gulp.dest('./dist/'));
 
   var js = gulp.src("build/main.js")
                .pipe(uglify())
                .pipe(gulp.dest('./dist/'));
+    
+var css = gulp.src("build/main.css")
+               .pipe(gulp.dest('./dist/'));
 
-  return merge(html,js);
+  return merge(html,js,css);
 });
 
 gulp.task('deploy', ['build'], function(){
@@ -76,7 +88,7 @@ gulp.task('deploy', ['build'], function(){
     .pipe(deploy())
 }); 
 
-gulp.task('default', ['html', 'browserify'], function() {
+gulp.task('default', ['html', 'browserify', 'minify-css'], function() {
 
   browserSync.init(['./build/**/**.**'], {
     server: "./build",
@@ -90,4 +102,5 @@ gulp.task('default', ['html', 'browserify'], function() {
   gulp.watch("src/index.html", ['html']);
   gulp.watch(viewFiles, ['views']);
   gulp.watch(jsFiles, ['browserify']);
+  gulp.watch("src/main.css", ['minify-css']);    
 });
